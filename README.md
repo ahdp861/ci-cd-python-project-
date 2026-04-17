@@ -18,8 +18,8 @@
 
 ```
 fibonacci/
-├── src/fibonacci.py       # Основной код генератора
-├── tests/test_fibonacci.py  # Тесты
+├── src/fib.py       # Основной код генератора
+├── tests/fib_test.py  # Тесты
 ├── requirements.txt   # Зависимости
 ├── .gitignore         # Игнорируемые файлы
 └── README.md          # Документация
@@ -32,8 +32,8 @@ fibonacci/
 ### 1. Клонирование репозитория
 
 ```bash
-git clone <ссылка_на_репозиторий>
-cd fibonacci
+git clone https://github.com/ahdp861/ci-cd-python-project-/edit/master/README.md
+cd ci-cd-python-project-
 ```
 
 ### 2. Установка зависимостей
@@ -45,7 +45,7 @@ pip install -r requirements.txt
 ### 3. Запуск тестов
 
 ```bash
-pytest test_fibonacci.py -v
+pytest tests/fib_test -v
 ```
 
 ---
@@ -80,11 +80,4 @@ print(generate_fibonacci_sequence(10))
 - Генерацию последовательностей.
 - Обработку ошибок (отрицательные `n`).
 
-Запуск:
-
-```bash
-pytest test_fibonacci.py -v
-```
-
----
 
