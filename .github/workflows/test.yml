@@ -12,36 +12,35 @@ jobs:
     strategy:
       matrix:
         python-version: ["3.9", "3.10", "3.11", "3.12"]
-steps:
-  - uses: actions/checkout@v4
+    steps:
+      - uses: actions/checkout@v4
 
-  - name: Set up Python ${{ matrix.python-version }}
-    uses: actions/setup-python@v4
-    with:
-      python-version: ${{ matrix.python-version }}
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v4
+        with:
+          python-version: ${{ matrix.python-version }}
 
-  - name: Install dependencies
-    run: |
-      python -m pip install --upgrade pip
-      pip install -r requirements.txt
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
 
-  - name: Run tests with HTML report
-    run: pytest tests/fib_test.py -v --html=report.html --self-contained-html
+      - name: Run tests with HTML report
+        run: pytest tests/fib_test.py -v --html=report.html --self-contained-html
 
-  - name: Upload test report
-    if: always()
-    uses: actions/upload-artifact@v4
-    with:
-      name: test-report
-      path: report.html
+      - name: Upload test report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-report
+          path: report.html
 
-  - name: Upload source code
-    if: success()
-    uses: actions/upload-artifact@v4
-    with:
-      name: source-code
-      path: |
-        src/
-        tests/
-        requirements.txt
-
+      - name: Upload source code
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: source-code
+          path: |
+            src/
+            tests/
+            requirements.txt
