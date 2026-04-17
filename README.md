@@ -18,8 +18,8 @@
 
 ```
 fibonacci/
-├── fibonacci.py       # Основной код генератора
-├── test_fibonacci.py  # Тесты
+├── src/fibonacci.py       # Основной код генератора
+├── tests/test_fibonacci.py  # Тесты
 ├── requirements.txt   # Зависимости
 ├── .gitignore         # Игнорируемые файлы
 └── README.md          # Документация
